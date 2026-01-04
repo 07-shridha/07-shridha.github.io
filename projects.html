@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | PRANJAL SHARMA</title>
+
+
+<link rel="stylesheet" href="">
+<style>
+:root {
+  --bg: #f5f7fb;
+  --text: #222;
+  --card: #ffffff;
+  --accent: #4f46e5;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background: var(--accent);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: var(--card);
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.toggle {
+  cursor: pointer;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>My Projects</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <button class="toggle" onclick="toggleDark()">🌙</button>
+</nav>
+
+<section>
+  <div class="card">
+    <h3> Study Planner Web App(In progress)</h3>
+    <p>A planner to manage tasks, subjects, and habits using JavaScript.</p>
+  </div>
+
+  <div class="card">
+    <h3> Quiz App (In progress)</h3>
+    <p>Interactive quiz app with score tracking and timers.</p>
+  </div>
+
+  <div class="card">
+    <h3>Algorithm Visualizer(In progress)</h3>
+    <p>Visual demonstration of sorting algorithms (in progress).</p>
+  </div>
+</section>
+
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.body.classList.contains("dark") ? "dark" : "light");
+}
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+</script>
+
+</body>
+</html>

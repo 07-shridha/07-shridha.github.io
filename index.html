@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRANJAL SHARMA | Portfolio</title>
+
+<style>
+:root {
+  --bg: #f5f7fb;
+  --text: #222;
+  --card: #ffffff;
+  --accent: #4f46e5;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background: var(--accent);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: var(--card);
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.toggle {
+  cursor: pointer;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>PRANJAL SHARMA</h1>
+  <p>Aspiring Computer Scientist | Self-taught on a Smartphone</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <button class="toggle" onclick="toggleDark()">🌙</button>
+</nav>
+
+<section>
+  <div class="card">
+    <h2> About Me</h2>
+    <p>
+      I am a high school student passionate about Computer Science.
+      With only an Android phone, I taught myself programming and began
+      building real-world projects despite limited resources.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2> Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Python (Basics)</li>
+      <li>Problem Solving</li>
+    </ul>
+  </div>
+</section>
+
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.body.classList.contains("dark") ? "dark" : "light");
+}
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+</script>
+
+</body>
+</html>
